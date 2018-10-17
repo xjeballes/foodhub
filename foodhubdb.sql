@@ -3,22 +3,23 @@ CREATE TABLE IF NOT EXISTS customer (
  firstname varchar(20),
  lastname varchar(20),
  gender varchar(15),
+ username varchar(20),
  email varchar(30),
  password varchar (20),
- contact_number int (11),
- remarks varchar(10)
-)
+ contact_number int (11)
+);
 
 CREATE TABLE IF NOT EXISTS owner (
  owner_id int primary key auto_increment,
  firstname varchar(20),
  lastname varchar(20),
  gender varchar(15),
+ username varchar(20),
  email varchar(30),
  password varchar (20),
  contact_number int (11)
 
-)
+);
 
 CREATE TABLE IF NOT EXISTS restaurant(
 restaurant_id int primary key auto_increment,

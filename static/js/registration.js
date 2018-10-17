@@ -24,7 +24,7 @@ $(document).ready(function () {
         var curStep = $(this).closest(".setup-content"),
             curStepBtn = curStep.attr("id"),
             nextStepWizard = $('div.setup-panel div a[href="#' + curStepBtn + '"]').parent().next().children("a"),
-            curInputs = curStep.find("input[type='text'],input[type='url']"),
+            curInputs = curStep.find("input[type='text'],input[type='url'],input[type='email'],input[type='password'],input[type='radio'],select"),
             isValid = true;
 
         $(".form-group").removeClass("has-error");
@@ -40,4 +40,9 @@ $(document).ready(function () {
     });
 
     $('div.setup-panel div a.btn-primary').trigger('click');
+
+    $(".card").click(function(){
+        console.log(this.id);
+        $('#type-'+this.id).click();
+    });
 });

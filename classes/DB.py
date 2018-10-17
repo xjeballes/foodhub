@@ -13,6 +13,9 @@ class DB():
                 print("MySQL Error: Database does not exist")
             else:
                 print(err)
+
+    def conn(self):
+        return self.mydb
     
     def cursor(self):
         return self.mydb.cursor()
