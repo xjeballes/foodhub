@@ -38,7 +38,6 @@ def registration():
 
         mycursor.execute(sql, [username])
         
-        print "hehe"
         myresult = mycursor.fetchone()
         for firstname,lastname in myresult:
             print(firstname)
