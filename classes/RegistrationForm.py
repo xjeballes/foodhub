@@ -1,5 +1,6 @@
 from wtforms import ValidationError, Form, BooleanField, StringField,SelectField, PasswordField, validators,RadioField
 from classes.DB import DB
+
 mydb = DB().conn()
 print "Reg: ", mydb
 mycursor = mydb.cursor()
