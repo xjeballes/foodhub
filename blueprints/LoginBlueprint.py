@@ -1,5 +1,5 @@
 from flask import Blueprint,render_template,session,redirect,url_for
-from forms import addForm,LoginForm
+from forms.LoginForm import addForm,LoginForm
 from classes.DB import DB
 
 login_blueprint = Blueprint('login_blueprint', __name__)

@@ -1,8 +1,7 @@
 from flask import Blueprint,session,render_template,request,redirect,url_for
 from classes.DB import DB
-from forms import addForm,LoginForm
 import mysql.connector
-from classes.RegistrationForm import RegistrationForm
+from forms.RegistrationForm import RegistrationForm
 from classes.User import User
 import mysql.connector
 
