@@ -42,7 +42,10 @@ $(document).ready(function () {
     $('div.setup-panel div a.btn-primary').trigger('click');
 
     $(".card").click(function(){
-        console.log(this.id);
-        $('#type-'+this.id).click();
+        var id = this.id;
+        if(id == "type-customer")
+            $('#type-0').click();
+        else if(id == "type-owner")
+            $('#type-1').click();
     });
 });
