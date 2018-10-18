@@ -54,6 +54,7 @@ def registration():
                 user = User(id,firstname,lastname,gender,contact_number,username,email,type)
             print user.toJSON()
             session['user'] = vars(user)
+            return redirect(url_for('home_blueprint.home'))
         except mysql.connector.Error as err:
             print(err)
     elif request.method == 'POST':
