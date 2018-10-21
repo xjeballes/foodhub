@@ -1,0 +1,102 @@
+body {
+	background-image: url(../img/img1.jpg);
+	background-repeat: no-repeat;
+	background-size: 100%;
+    font-family: 'Bitter';
+}
+.fh img{
+	margin-top: 0;
+	margin-left: 2.5%;
+	padding: 5px;
+	float: left;
+}
+
+.navbar{
+    overflow: hidden;
+    width: inherit;
+    margin-left: 1%;
+    margin-right: 1%;
+    padding: 10px;
+}
+.navbar a{;
+    float: right;
+    display: inline-block;
+    color: ghostwhite;
+	text-shadow: 1px 1px 1px black;
+    text-align: left;
+    padding: 15px 15px 15px;
+    font-size: 25px;
+    text-decoration: none;
+}
+p{
+	text-align: center;
+	color: ghostwhite;
+	margin-top: 10%;
+	font-size: 40px;
+	text-shadow: 1px 1px 1px black;
+	font-style: italic;
+}
+.box {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+	width: 400px;
+	padding: 40px;
+	background: rgba(0,0,0,.8);
+	box-sizing: border-box;
+	box-shadow: 0 15px 25px rgba(0,0,0,.5);
+	border-radius: 10px;	
+}
+.box h2{
+	margin: 0;
+	padding: 0;
+	color: #fff;
+	text-align: center;
+}
+.box .inputBox input {
+	width: 100%;
+	padding: 9px 0;
+	font-size: 15px;
+	color: #fff;
+	margin-bottom: 30px;
+	border: none;
+	border-bottom: 1px solid #fff;
+	outline: none;
+	background: transparent;
+}
+.box .inputBox label{
+	color: white;
+	font-size: 15px;
+}
+.box button{
+	margin-left: 5px;
+	padding: 10px;
+	padding-left: 15px;
+	padding-right: 15px;
+	background-color: #d19653;
+	border-style: solid;
+	border-radius: 5px;
+	border-color: transparent;
+	color: white;
+}
+
+.drpdwn{
+	display: none;
+	position: relative;
+	display: inline-block;
+	background-color: #d19653;
+	border-style: solid;
+	border-radius: 5px;
+	border-color: transparent;
+	transition: .5s;
+
+}
+.box .inputBox option{
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    padding: 12px 16px;
+    z-index: 1;
+}
