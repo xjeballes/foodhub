@@ -1,0 +1,83 @@
+{% extends 'base.html' %}
+
+{% block title %}{{title}}{% endblock %}
+{% block header %}
+
+<link rel="stylesheet" href="{{url_for('static',filename='css/profile.css')}}">
+
+{% endblock %}
+
+{% block content %}
+<div class="navbar">
+{% if user == None %}
+    <a href="/registration">Sign Up</a>
+    <a href="/login">Log In</a>
+
+{% else %}
+    
+    <a href="/logout">Log Out</a>
+    <a href="/profile">Profile</a>
+{% endif %}
+</div>    
+<br><br><br>
+<div class="container">
+    <div class="row">
+        <div class="col-sm-4 col-md-4 user-details">
+            <div class="user-image">
+                <img src="http://www.gravatar.com/avatar/2ab7b2009d27ec37bffee791819a090c?s=100&d=mm&r=g" alt="Karan Singh Sisodia" title="Karan Singh Sisodia" class="img-circle">
+            </div>
+            <div class="user-info-block">
+                <div class="user-heading">
+                    <h3>{{ data.lastname }}, {{ data.firstname }}</h3>
+                    <span class="help-block">{{ data.username }}</span>
+                </div>
+                <ul class="navigation">
+                    <li class="active">
+                        <a data-toggle="tab" href="#information">
+                            <span class="glyphicon glyphicon-user"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="#settings">
+                            <span class="glyphicon glyphicon-cog"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="#email">
+                            <span class="glyphicon glyphicon-envelope"></span>
+                        </a>
+                    </li>
+                    <li>
+                        <a data-toggle="tab" href="#events">
+                            <span class="glyphicon glyphicon-calendar"></span>
+                        </a>
+                    </li>
+                </ul>
+                <div class="user-body">
+                    <div class="tab-content">
+                        <div id="information" class="tab-pane active">
+                            <h4>Username: {{ data.username }}</h4>
+                            <h4>Email: {{ data.email }}</h4>
+                            <h4>Contact: {{ data.contact_number }}</h4>
+                        </div>
+                        <div id="settings" class="tab-pane">
+                            <h4><a href="#" class="btn btn-primary" role="button">Edit Profile</a></h4>
+                        </div>
+                        <div id="email" class="tab-pane">
+                            <h4>Send Message</h4>
+                        </div>
+                        <div id="events" class="tab-pane">
+                            <h4>Events</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block footer %}
+<script src=""></script>
+
+{% endblock %}
