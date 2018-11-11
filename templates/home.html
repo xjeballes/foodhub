@@ -9,12 +9,16 @@
 	<div class="fh">
 		<img src="../static/img/foodhub.png">
 	</div>
-	
+
 	<div class="navbar">
+	{% if user == None %}
 		<a href="/registration">Sign Up</a>
 		<a href="/login">Log In</a>
+	
+	{% else %}
+		<a href="/logout">Log Out</a>
+	{% endif %}
 	</div>
-
 	<p>Welcome to FoodHub!</p>
 
 </body>

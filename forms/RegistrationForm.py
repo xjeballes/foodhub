@@ -49,4 +49,8 @@ class RegistrationForm(Form):
     ])
     cpassword = PasswordField('Repeat Password',[validators.DataRequired()])
     type = RadioField('',[validators.DataRequired(message="Please select account type.")],choices=[('customer','customer'),('owner','owner')])
+    restaurant_name = StringField('Restaurant Name', [validators.Length(min=0, max=25,message="Restaurant Name must be between 1 and 25 characters long.")])
+    restaurant_type = StringField('Restaurant Type', [validators.Length(min=0, max=25,message="Restaurant Type must be between 1 and 25 characters long.")])
+    bio = StringField('Bio', [validators.Length(min=0, max=150,message="Bio must be between 1 and 150 characters long.")])
+    locations = StringField('Locations', [validators.Length(min=0, max=25,message="Locations must be between 1 and 25 characters long.")])
 

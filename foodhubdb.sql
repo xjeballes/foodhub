@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS customer (
  gender varchar(15),
  username varchar(20),
  email varchar(30),
- password varchar (20),
+ password varchar (255),
  contact_number varchar(12)
 );
 
@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS owner (
  gender varchar(15),
  username varchar(20),
  email varchar(30),
- password varchar (20),
+ password varchar (255),
  contact_number varchar(12)
 );
 

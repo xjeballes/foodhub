@@ -65,8 +65,8 @@ p{
 	outline: none;
 	background: transparent;
 }
-.box .inputBox label{
-	color: white;
+.box .inputBox label
+	colo{r: white;
 	font-size: 15px;
 }
 .box button{

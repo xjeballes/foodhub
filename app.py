@@ -5,7 +5,6 @@ import mysql.connector
 from mysql.connector import errorcode
 import os
 
-
 ##import blueprints
 from blueprints.LoginBlueprint import login_blueprint
 from blueprints.RegisterBlueprint import register_blueprint
@@ -19,11 +18,30 @@ app.register_blueprint(login_blueprint)
 app.register_blueprint(register_blueprint)
 app.register_blueprint(home_blueprint)
 
+@app.route("/")
+def home():
+	return render_template('owner.html')
 
 @app.route("/logout", methods=['GET', 'POST'])
 def logout():
-  session.pop('user')
-  return render_template('home.html', title = 'Home')
+  if 'user' in session:
+    session.pop('user')
+  return redirect(url_for('home_blueprint.home'))
+
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+  form = LoginForm()
+  if request.method == 'POST':
+    username = request.form["username"].upper()
+    password = request.form["password"].upper()
+
+    sql = "INSERT INTO user (username, password) VALUES (%s, %s)"
+    val = (username, password)
+    mycursor.execute(sql, val)
+    mydb.commit()
+
+
+  return render_template('loginform.html', form=form  )
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
