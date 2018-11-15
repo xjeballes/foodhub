@@ -99,7 +99,7 @@
                             {{ render_field(form.username,class="form-control",placeholder="Username") }}
                         </div>
                         <div class="form-group">
-                            {{ render_field(form.email,class="form-control",placeholder="Email") }}</div>
+                            {{ render_field(form.email,class="form-control",type="email",placeholder="Email") }}</div>
                         <div class="form-group">
                             {{ render_field(form.password,class="form-control",placeholder="Password") }}
                         </div>
@@ -123,7 +123,7 @@
                                                 value="customer" required> -->
                                                 {{radio(style="display:none",checked="checked")}}
             
-                                            <div class="card" id="type-customer">
+                                            <div class="card" id="type-customer" style="background: white;">
                                                 <img class="card-img-top" src="{{url_for('static',filename='img/customer.png')}}">
                                                 <div class="card-block" style="text-align:center">
                                                     <h5 class="text-bold">Customer</h5>
@@ -135,9 +135,9 @@
                                         <div class="col-sm-6 col-md-6">
                                                 {{radio(style="display:none")}}
             
-                                            <div class="card" id="type-owner">
+                                            <div class="card" id="type-owner"  style="background: white;">
                                                 <img class="card-img-top" src="{{url_for('static',filename='img/owner.png')}}">
-                                                <div class="card-block" style="text-align:center">
+                                                <div class="card-block" style="text-align:center;" >
                                                     <h5 class="text-bold">Owner</h5>
                                                 </div>
                                             </div>
