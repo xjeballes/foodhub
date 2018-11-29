@@ -1,0 +1,106 @@
+{% extends 'register.html' %}
+{% block content %}
+
+
+<div class="container">
+<br/>
+<br/>	
+	<div class="row">
+		
+<div class="col-md-6 col-md-offset-3" id="login">  
+
+<form id="regForm" method="POST" action="/registration/customer">
+ <input type="hidden" name="type" value="customer">
+
+<h1 style="color:black;" align="center" class="fs-title">Personal Details</h1>
+<br/>	
+<div class="form-group">
+        {% if form.firstname.errors %}
+            <div>{{ form.firstname.label (class="user") }}<br/> {{ form.firstname (class="form-control input-sm form-control-lg is-invalid") }}</div> 
+            <ul class="errors">{% for error in form.firstname.errors %}<p style="color: #b30000; font-size: 1em;">{{ error }}</p>{% endfor %}</ul>
+        {% else %}
+            <div>{{ form.firstname.label (class="user") }}<br/> {{ form.firstname (class="form-control input-sm") }}</div>
+        {% endif %}
+</div>
+	
+<div class="form-group">
+        {% if form.lastname.errors %}
+            <div>{{ form.lastname.label (class="user") }}<br/> {{ form.lastname (class="form-control input-sm form-control-lg is-invalid") }}</div> 
+            <ul class="errors">{% for error in form.lastname.errors %}<p style="color: #b30000; font-size: 1em;">{{ error }}</p>{% endfor %}</ul>
+        {% else %}
+            <div>{{ form.lastname.label (class="user") }}<br/> {{ form.lastname (class="form-control input-sm") }}</div>
+        {% endif %}
+</div>
+
+<div class="form-group">
+        {% if form.username.errors %}
+            <div>{{ form.username.label (class="user") }}<br/> {{ form.username (class="form-control input-sm form-control-lg is-invalid") }}</div> 
+            <ul class="errors">{% for error in form.username.errors %}<p style="color: #b30000; font-size: 1em;">{{ error }}</p>{% endfor %}</ul>
+        {% else %}
+            <div>{{ form.username.label (class="user") }}<br/> {{ form.username (class="form-control input-sm") }}</div>
+        {% endif %}
+</div>
+
+<div class="form-group">
+        {% if form.email.errors %}
+            <div>{{ form.email.label (class="user") }}<br/> {{ form.email (class="form-control input-sm form-control-lg is-invalid") }}</div> 
+            <ul class="errors">{% for error in form.email.errors %}<p style="color: #b30000; font-size: 1em;">{{ error }}</p>{% endfor %}</ul>
+        {% else %}
+            <div>{{ form.email.label (class="user") }}<br/> {{ form.email (class="form-control input-sm") }}</div>
+        {% endif %}
+</div>
+
+<div class="form-group">
+        {% if form.contact_number.errors %}
+            <div>{{ form.contact_number.label (class="user") }}<br/> {{ form.contact_number (class="form-control input-sm form-control-lg is-invalid") }}</div> 
+            <ul class="errors">{% for error in form.contact_number.errors %}<p style="color: #b30000; font-size: 1em;">{{ error }}</p>{% endfor %}</ul>
+        {% else %}
+            <div>{{ form.contact_number.label (class="user") }}<br/> {{ form.contact_number (class="form-control input-sm") }}</div>
+        {% endif %}
+</div>
+
+<div class="form-group">
+        {% if form.password.errors %}
+            <div>{{ form.password.label (class="user") }}<br/> {{ form.password (class="form-control input-sm form-control-lg is-invalid") }}</div> 
+            <ul class="errors">{% for error in form.password.errors %}<p style="color: #b30000; font-size: 1em;">{{ error }}</p>{% endfor %}</ul>
+        {% else %}
+            <div>{{ form.password.label (class="user") }}<br/> {{ form.password (class="form-control input-sm") }}</div>
+        {% endif %}
+</div>
+
+<div class="form-group">
+        {% if form.cpassword.errors %}
+            <div>{{ form.cpassword.label (class="user") }}<br/> {{ form.cpassword (class="form-control input-sm form-control-lg is-invalid") }}</div> 
+            <ul class="errors">{% for error in form.cpassword.errors %}<p style="color: #b30000; font-size: 1em;">{{ error }}</p>{% endfor %}</ul>
+        {% else %}
+            <div>{{ form.cpassword.label (class="user") }}<br/> {{ form.cpassword (class="form-control input-sm") }}</div>
+        {% endif %}
+</div>
+
+<div class="form-group">
+    <div>{{ form.gender.label (class="user") }}<br/> {{ form.gender(class="radio") }}</div>
+        {% if form.gender.errors %}
+            <ul class="errors">{% for error in form.gender.errors %}<p style="color: #b30000; font-size: 1em;">{{ error }}</p>{% endfor %}</ul>
+        {% endif %}
+</div>
+
+
+
+
+<div class="form-group">
+
+<input type="submit" class="btn btn-success" value="Submit" style="font-size: 25px; border-radius: 4px;">
+
+    </div>
+    <br/><br/><br/>
+    <a  style="color: #cccccc; font-size: 12px; float: left; margin-left: 10px;"> Already have an account? </a>
+    <a href="#" style="color: #e6e6e6; font-size: 12px; float: left; margin-left: 10px; font-weight: bold; "> Login </a>
+
+
+</form>
+
+<br/>
+<br/>
+  </div>
+	</div>
+{% endblock %}
