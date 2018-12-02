@@ -1,0 +1,99 @@
+  <link rel="stylesheet" type="text/css" href="\static\css\bootstrap.min.css">
+  <script type="text/javascript" src="\static\js\jquery-3.3.1.min.js"></script>
+  <script type="text/javascript" src="\static\js\bootstrap.min.js"></script>
+  <script type="text/javascript" src="\static\js\popper.min.js"></script>
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link rel="stylesheet" type="text/css" href="\static\css\search.css">
+<!-- for search -->
+<!--   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" type="text/css" href="\static\css\bootstrap.min.css">
+ -->
+<!-- <link href="\static\css\search.css" type="text/css" rel="stylesheet">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script> -->
+<!------ Include the above in your HEAD tag ---------->
+
+  <!-- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous"> 
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script> -->
+  <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>-->
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script> -->
+
+    <div style="font-family: Arial, Helvetica, sans-serif;"> 
+      <nav class="navbar navbar-expand-lg navbar-light bg-transparent rounded" style="font-size: 28px; padding-top: 20px; padding-left: 0.1px;">
+        <a class="navbar-brand"><img src="../static/img/foodhub.png" style="float: left; max-height: 50px; margin-top: 2%"></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExample09" aria-controls="navbarsExample09" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarsExample09">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="/" style="color: white; font-size: 18px;">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="/about" style="color: white; font-style: monospace; font-size: 18px;">About</a>
+            </li>
+
+            {% if 'user' not in session %}
+            <li>
+              <a class="nav-link" href="/login" style="color: white; font-size: 18px;">Log In</a>
+            </li>
+            <li class="nav-item dropdown" style="float: right;">
+              <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white; font-size: 18px;">Register</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown09">
+                <a class="dropdown-item" href="/registration/owner">Owner</a>
+                <a class="dropdown-item" href="/registration/customer">Customer</a>
+              </div>
+            </li>
+            {% else %}
+                <li class="nav-item dropdown" style="float: right;">
+                  <a class="nav-link dropdown-toggle" href="https://example.com" id="dropdown09" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="color: white;">
+                  {{ user.firstname }} {{ user.lastname }}</a>
+                  <div class="dropdown-menu" aria-labelledby="dropdown09">
+                    
+                    <a class="dropdown-item" href="/profile">Profile</a>
+                    
+                    <a class="dropdown-item" href="/logout">Log Out</a>
+                  </div>
+                </li>
+                </ul>
+            {% endif %}
+            <div class="container">
+              <div class="row">
+                <div class="col-sm-6 col-sm-offset-3">
+                  <div id="imaginary_container"> 
+                    <div class="input-group stylish-input-group">
+                      <input type="text" class="form-control"  placeholder="Search" >
+                      <span class="input-group-addon">
+                        <button type="submit">
+                          <span class="glyphicon glyphicon-search"></span>
+                        </button>  
+                      </span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+<!--             <div class="topnav">
+              <input type="text" placeholder="Search.." style="float: right;
+              padding: 6px;
+              border: none;
+              margin-top: 8px;
+              margin-right: 0px;
+              margin-left: 100px;
+              font-size: 17px;">
+              <button></button>
+            </div> -->
+<!--             <div class="container">
+              <div class="row">
+                <div class="search">
+                  <input type="text" class="form-control input-sm" maxlength="64" placeholder="Search" />
+                  <button type="submit" class="btn btn-primary btn-sm">Search</button>
+                </div>
+              </div>
+            </div> -->
+            
+      </nav>
+    </div>
