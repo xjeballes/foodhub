@@ -20,7 +20,7 @@ app.register_blueprint(home_blueprint)
 
 @app.route("/")
 def home():
-	return render_template('owner.html')
+	return render_template('home.html')
 
 @app.route("/logout", methods=['GET', 'POST'])
 def logout():
