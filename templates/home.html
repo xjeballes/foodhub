@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 {% extends 'base.html' %}
 {% block header %}
 	 <link rel="stylesheet" type="text/css" href="\static\css\homeStyle.css">
@@ -157,3 +158,30 @@
 </section> -->
 <!-- Team -->
 {% endblock %}
+=======
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<title>Home</title>
+	<link rel="stylesheet" type="text/css" href="\static\css\style.css">
+</head>
+<body>
+	<div class="fh">
+		<img src="../static/img/foodhub.png">
+	</div>
+
+	<div class="navbar">
+	{% if user == None %}
+		<a href="/registration">Sign Up</a>
+		<a href="/login">Log In</a>
+	
+	{% else %}
+		<a href="/logout">Log Out</a>
+	{% endif %}
+	</div>
+	<p>Welcome to FoodHub!</p>
+
+</body>
+</html>
+>>>>>>> dcd3fa4953a406e7bd0d87ceefc80b868b3d274c

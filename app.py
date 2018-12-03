@@ -2,7 +2,11 @@ from flask import Flask, session, render_template, url_for, request, flash, redi
 from classes.DB import DB
 import mysql.connector
 from mysql.connector import errorcode
+<<<<<<< HEAD
 import os 
+=======
+import os
+>>>>>>> dcd3fa4953a406e7bd0d87ceefc80b868b3d274c
 
 ##import blueprints
 from blueprints.LoginBlueprint import login_blueprint
@@ -19,12 +23,19 @@ app.config['SECRET_KEY'] = 'asdfged123qwkjasdasddqwqd4'
 app.register_blueprint(login_blueprint)
 app.register_blueprint(register_blueprint)
 app.register_blueprint(home_blueprint)
+<<<<<<< HEAD
 app.register_blueprint(profile_blueprint)
 app.register_blueprint(editProfile_blueprint)
 app.register_blueprint(restaurant_blueprint)
 @app.route("/")
 def home():
   return render_template(restaurant.html)
+=======
+
+@app.route("/")
+def home():
+	return render_template('owner.html')
+>>>>>>> dcd3fa4953a406e7bd0d87ceefc80b868b3d274c
 
 @app.route("/logout", methods=['GET', 'POST'])
 def logout():
@@ -32,6 +43,7 @@ def logout():
     session.pop('user')
   return redirect(url_for('home_blueprint.home'))
 
+<<<<<<< HEAD
 @app.route("/search", methods=['GET', 'POST'])
 def search():
   form = searchform()
@@ -50,6 +62,22 @@ def about():
   if 'user' in session:
 	user = session['user']
   return render_template('about.html', title= 'About', user=user)
+=======
+@app.route("/login", methods=['GET', 'POST'])
+def login():
+  form = LoginForm()
+  if request.method == 'POST':
+    username = request.form["username"].upper()
+    password = request.form["password"].upper()
+
+    sql = "INSERT INTO user (username, password) VALUES (%s, %s)"
+    val = (username, password)
+    mycursor.execute(sql, val)
+    mydb.commit()
+
+
+  return render_template('loginform.html', form=form  )
+>>>>>>> dcd3fa4953a406e7bd0d87ceefc80b868b3d274c
 
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))

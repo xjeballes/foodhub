@@ -5,7 +5,7 @@ CREATE TABLE IF NOT EXISTS customer (
  gender varchar(15),
  username varchar(20),
  email varchar(30),
- password varchar (20),
+ password varchar (255),
  contact_number varchar(12)
 );
 
@@ -16,7 +16,7 @@ CREATE TABLE IF NOT EXISTS owner (
  gender varchar(15),
  username varchar(20),
  email varchar(30),
- password varchar (20),
+ password varchar (255),
  contact_number varchar(12)
 );
 
@@ -27,7 +27,7 @@ restaurant_type varchar(30),
 bio varchar(200),
 locations varchar(50)
 
-)
+);
 
 CREATE TABLE IF NOT EXISTS menu(
 menu_id int primary key,
@@ -38,7 +38,7 @@ index cat_ind (cat_id),
 foreign key (cat_id)
 	references category(category_id)
 
-)
+);
 
 CREATE TABLE IF NOT EXISTS images(
 image_id int primary key,

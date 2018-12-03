@@ -13,9 +13,13 @@ def home():
 	user = None
 	if 'user' in session:
 		user = session['user']
+<<<<<<< HEAD
 
 	#sql = '''SELECT * from restaurant'''
 	#mycursor.execute(sql,data)
 	#data = mycursor.fetchall()
 
 	return render_template('home.html', title = 'Home',user=user)
+=======
+	return render_template('home.html', title = 'Home',user=user)
+>>>>>>> dcd3fa4953a406e7bd0d87ceefc80b868b3d274c

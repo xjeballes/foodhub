@@ -1,12 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<<<<<<< HEAD
 	<meta charset="utf-8">
   <link rel="stylesheet" type="text/css" href="\static\css\bootstrap.min.css">
   <script type="text/javascript" src="\static\css\jquery-3.3.1.min.js"></script>
   <script type="text/javascript" src="\static\css\bootstrap.min.js"></script>
   <script type="text/javascript" src="\static\css\popper.min.js"></script>
 	{% block header %}{% endblock %}
+=======
+  <script src="{{url_for('static',filename='js/jquery-3.3.1.min.js')}}" ></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+  <script src="{{url_for('static',filename='js/bootstrap.min.js')}}" ></script>
+
+  <!-- <link href="{{url_for('static',filename='css/bootstrap.min.css')}}" rel="stylesheet" > -->
+
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+   {% block header %}{% endblock %}
+>>>>>>> dcd3fa4953a406e7bd0d87ceefc80b868b3d274c
 <title>{% block title %}{{ title }}{% endblock %}</title>
 </head>
 
