@@ -13,7 +13,9 @@
 <div class="container">
     <div class="row">
         <div class="col-12">
+
             <div class="card" style="width: 64rem;">
+
 
                 <div class="card-body">
                     <div class="card-title mb-4">
@@ -25,6 +27,7 @@
                                     <input type="file" style="display: none;" id="profilePicture" name="file" />
                                 </div>
                             </div>
+
                             <div class="useruser ml-3">
                                 <h2 class="d-block" style="font-size: 1.5rem; font-weight: bold">{{ user.lastname }}, {{ user.firstname }}</h2>
                                 <h6 class="d-block">{{ user.username }}</h6>
@@ -34,6 +37,7 @@
                                 <input type="button" class="btn btn-primary d-none" id="btnSave" value="Save Changes" />
                                 <input type="button" class="btn btn-primary d-none" id="btnDiscard" value="Discard Changes" />
                             </div>
+
                         </div>
                     </div>
 
@@ -41,50 +45,62 @@
                         <div class="col-12">
                             <div class="row">
                                         <div class="col-sm-3 col-md-2 col-5">
+
                                             <label style="font-weight:bold;">Full Name</label>
                                         </div>
                                         <div class="col-md-8 col-6">
+
                                             {{ user.firstname }} {{ user.lastname }}
                                         </div>
                                     </div>
                                     <hr />
+
                                     <div class="row">
                                         <div class="col-sm-3 col-md-2 col-5">
                                             <label style="font-weight:bold;">Username</label>
                                         </div>
                                         <div class="col-md-8 col-6">
+
                                             {{ user.username }}
                                         </div>
                                     </div>
                                     <hr />
                                     <div class="row">
                                         <div class="col-sm-3 col-md-2 col-5">
+
                                             <label style="font-weight:bold;">Gender</label>
                                         </div>
                                         <div class="col-md-8 col-6">
+
                                             {{ user.gender }}
                                         </div>
                                     </div>
                                     <hr />
                                     <div class="row">
                                         <div class="col-sm-3 col-md-2 col-5">
+
                                             <label style="font-weight:bold;">Email</label>
                                         </div>
                                         <div class="col-md-8 col-6">
+
                                             {{ user.email }}
                                         </div>
                                     </div>
                                     <hr />
                                     <div class="row">
                                         <div class="col-sm-3 col-md-2 col-5">
+
                                             <label style="font-weight:bold;">Contact</label>
                                         </div>
                                         <div class="col-md-8 col-6">
+
                                             {{ user.contact_number }}
                                         </div>
                                     </div>
                                     <hr />
+
                                     <a class="btn btn-outline-primary" type="button" href="/editprofile">Edit Profile</a>
+
                         </div>
                     </div>
 
@@ -95,6 +111,7 @@
         </div>
     </div>
 </div>
+
 <script type="text/javascript">
     $(document).ready(function () {
             $imgSrc = $('#imgProfile').attr('src');
@@ -137,6 +154,7 @@
             });
         });
 </script>
+
 {% endblock %}
 
 {% block footer %}
