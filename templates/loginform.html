@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+	
+{% block header %}
+	<!--<link rel="stylesheet" href="{{url_for('static',filename='css/bootstrap.min.css')}}">-->
+	<link rel="stylesheet" type="text/css" href="\static\css\login\style.css">
+{% endblock %}
+
+{% block content %}
+	{% include '_navbar.html' %}
+	<div class="loginbox">
+		<p><img src="\static\img\avatar.png" class="avatar"></p>
+		<h2 style="text-align: center;">Login Here</h2>
+		<form action="login" method="POST">
+		<p>Username</p>
+		<input type="username" name="username" id="username" placeholder="Enter Username">
+		{% if error != None %}
+		<p><span style="color: red;">{{error}}</span></p>
+		{% endif %}
+		<p>Password</p>
+		<input type="password" name="password" id="password" placeholder="Enter Password">
+		<br>
+		<br>
+		<p><select id="type" name="type"  class="form-control">
+			<option value="" disabled selected hidden>Are you a/an</option>
+			<option value="customer">Customer</option>
+			<option value="owner">Owner</option> 
+		</select></p>
+<!-- 		<input type="radio" name="type" value="customer" checked><span>Customer</span>
+		<input type="radio" name="type" value="owner"><span>Owner</span> -->
+		<div style="text-align: center;">
+		<input type="submit" class="btn-submit" name="submit" value="Login">
+		<br>
+		<a href="#"> Forget Password? </a>
+		</div>
+	</form>
+	</div>
+{% endblock %}
