@@ -3,3 +3,6 @@
   {{ field(**kwargs)|safe }}
 {% endmacro %}
 
+{% macro search_field(search) %}
+	{{ search(**kwargs)|safe }}
+{% endmacro %}
