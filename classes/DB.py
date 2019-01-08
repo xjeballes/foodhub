@@ -8,7 +8,7 @@ class DB():
     def conn(self):
         if self.mydb is None:
             try:
-                self.mydb = mysql.connector.connect(user='root',password='jonsol109811',host="127.0.0.1",database='foodhub')   
+                self.mydb = mysql.connector.connect(user='root',password='',host="127.0.0.1",database='foodhub')   
             except mysql.connector.Error as err:
                 if err.errno == errorcode.ER_ACCESS_DENIED_ERROR:
                     print("MySQL Error: Something is wrong with your user name or password")
