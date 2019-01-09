@@ -1,3 +1,4 @@
+{% from '_formhelpers.html' import search_field %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,10 +30,16 @@
         <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
       </li>
     
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+    <!-- ========================== SEARCH ======================== -->
+    <form method="POST" class="form-inline my-2 my-lg-0" action="{{ url_for('search') }}">
+      {{ searchForm.csrf_token }}
+      <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
+      <div aria-label="Search" type="text" placeholder="Search" >
+        {{ search_field(searchForm.resto, placeholder="Search for Restaurants", class="form-control mr-sm-2") }}
+      </div>
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+    <!-- ========================== SEARCH ======================== -->
     </ul>
    
             <a class="nav-link" href="/register" >Register <span class="sr-only">(current)</span></a>
@@ -55,10 +62,16 @@
         <a class="nav-link" href="/home">Home <span class="sr-only">(current)</span></a>
       </li>
     
-    <form class="form-inline my-2 my-lg-0">
-      <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
+    <!-- ========================== SEARCH ======================== -->
+    <form method="POST" class="form-inline my-2 my-lg-0" action="{{ url_for('search') }}">
+      {{ searchForm.csrf_token }}
+      <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
+      <div aria-label="Search" type="text" placeholder="Search" >
+        {{ search_field(searchForm.resto, placeholder="Search for Restaurants", class="form-control mr-sm-2") }}
+      </div>
       <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
     </form>
+    <!-- ========================== SEARCH ======================== -->
     </ul>
     {% endif %}
 </nav>

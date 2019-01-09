@@ -25,7 +25,7 @@ def rest(name):
 #@restaurant_blueprint.route("/restaurant/<restaurant_id>", methods=['GET', 'POST'])
 #def reserve(restaurant_id):
 	#user = None
-	#if 'user' in session:
+	#if 'user' in session: 
 	#	user = session['user']
 	#else:
 	#	return redirect(url_for('login_blueprint.login'))

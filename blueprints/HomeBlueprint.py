@@ -11,6 +11,7 @@ home_blueprint = Blueprint('home_blueprint', __name__)
 
 @home_blueprint.route("/home", methods=['GET', 'POST'])
 def home():
+	searchForm = SearchForm()
 	sql = "SELECT * from restaurant"
 	mycursor.execute(sql)
 	data = mycursor.fetchall()
@@ -21,9 +22,9 @@ def home():
 		sql = "SELECT * from restaurant r,owner o WHERE r.owner_id = o.owner_id AND o.owner_id = %s"
 		mycursor.execute(sql,[user['id']])
 		items = mycursor.fetchall ()
-		return render_template('home.html', title = 'Home',user=user, data=data, items=items)
+		return render_template('home.html', title = 'Home',user=user, data=data, items=items, searchForm=searchForm)
 	
-	return render_template('home.html', title = 'Home',user=user, data=data)
+	return render_template('home.html', title = 'Home',user=user, data=data, searchForm=searchForm)
 
 
 

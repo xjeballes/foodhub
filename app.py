@@ -26,31 +26,6 @@ app.register_blueprint(profile_blueprint)
 app.register_blueprint(editProfile_blueprint)
 app.register_blueprint(restaurant_blueprint)
 
-items = [
-  {
-    'item_name': 'PANSIT',
-    'price': '15',
-    'category': 'pasta'
-     
-  },
-  {
-    'item_name': 'SIOMAI',
-    'price': '30',
-    'category': 'japa'
-  },
-  {
-    'item_name': 'SILI',
-    'price': '30',
-    'category': 'japa'
-   },
-  {
-    'item_name': 'siomai',
-    'price': '30',
-    'category': 'japa'
-  },
-  
-  
-]
 @app.route("/")
 def location():
   return render_template('location.html')
@@ -60,7 +35,8 @@ def home():
 
 @app.route("/register")
 def register():
-  return render_template('register.html')
+  searchForm = SearchForm()
+  return render_template('register.html', searchForm=searchForm)
 
 @app.route("/logout", methods=['GET', 'POST'])
 def logout():
@@ -68,22 +44,25 @@ def logout():
     session.pop('user')
   return redirect(url_for('home_blueprint.home'))
 
+#===== SEARCH ===============================================================
 @app.route("/search", methods=['GET', 'POST'])
 def search():
   searchForm = SearchForm()
-  user = session['user']
+  user = None
+  if 'user' in session:
+    print 'john'
+    user = session['user']
+    print user
   if request.method == 'POST' and searchForm.validate_on_submit():
-    print 'john' 
     resto = request.form['resto']
-    sql = "SELECT * FROM restaurant WHERE restaurant_name or restaurant_type LIKE '%"+resto+"%'"
+    sql = '''SELECT * FROM restaurant WHERE restaurant_name LIKE "%'''+resto+'''%" or restaurant_type LIKE "%'''+resto+'''%"'''
     mycursor.execute(sql)
     result = mycursor.fetchall()
     print result
 
     return render_template('search.html', searchForm=searchForm, user=user, result=result)
-  
-
-  return render_template('search.html', searchForm=searchForm, user=user)
+  return render_template('search.html', searchForm=searchForm)
+#===== SEARCH ===============================================================
 
 @app.route("/about")
 def about():
