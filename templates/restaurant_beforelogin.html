@@ -1,0 +1,39 @@
+{% extends 'baserestau.html' %}
+{% block content %}
+ {% include 'navbarcus.html' %}
+<!-- ADD Menu -->
+
+
+
+<!-- Reservation-->
+
+
+
+<!--first part-->
+  
+<div  class="jumbotron bg-wizardry bg-dark text-white mb-0 radius-0">
+  <div style="height: 500px;" class="container">
+<!-- the restaurant name-->
+      <h1 class="display-1 text-light">{{ user.restaurant_name }}
+        <span class="fa fa-cutlery text-warning display-icon"></span>
+      </h1>
+<br/>
+<br/>
+<!-- bio-->
+      <span "class="lead">{{ user.bio }}</span>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+    <a href="/restaurant/{{ user.restaurant_name }}">
+      <button style="color:black;" type="button" class="btn btn-outline-warning">Reserve</button>
+    </a>
+  </div>
+</div>
+
+
+
+{% endblock %}
+
+

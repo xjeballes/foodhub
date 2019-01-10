@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    <link rel="stylesheet" href="\static\css\font.css">
+    <link rel="stylesheet" href="\static\css\font2.css">
+    <link rel="stylesheet" href="\static\css\bootstrap4-wizardry.css">
+    <link rel="stylesheet" href="\static\css\restaurant.css">
+    <link rel="stylesheet" href="\static\css\sidenav.css">
+
+  </head>
+  <body >
+
+<div id="main">
+
+{% block content %}
+{% endblock %}
+
+<div style="  background-color:rgba(255,255,255,.3); "  class="jumbotron   text-dark mb-0 radius-0">
+<br/>
+<br/>
+<!-- Second Part-->
+
+  <div class="container">
+    <div class="row">
+
+<!-- Date and Time-->
+    
+        <div style="outline: 2px dashed black;"class="col-md-6">
+                <span class="lead">Time:</span>
+                <br/>
+                <span class="lead">Location:</span>
+                <br/>
+                <span class="lead">Contact Number:</span>
+        </div>
+
+<!-- Restaurant Reviews and Comment-->
+    
+        <div class="col-md-6">
+            <div style="width: 545px; float: right; "  class="jumbotron  bg-dark text-light mb-0 radius-0">
+                <span class="lead">Time:</span>
+
+            </div>
+        </div>
+
+    </div>
+  </div>
+
+<br/>
+<br/>
+<br/>
+<br/>
+<!-- Menu Part -->
+
+  <div style=" background-color:rgba(255,255,255,.4);" class="container">
+
+ <!-- Menu Name-->
+      <h1 style="font-size: 50px;" align="center" class="display-1 text-dark">Menu
+        <span style="font-size: 20px;" class="fa fa-cutlery text-warning display-icon"></span>
+      </h1>
+  </div>
+      <br/>
+      <br/>
+      <br/>
+    <div class="container"> 
+      <div class="row">
+        {% for item in items %}
+        <li style="list-style-type:none" class="col-md-4" >
+          <div style="width:300px; height:350px;" class="card">
+            <img class="card-img-top" src="static/img/login7.jpg" alt="Card image cap" style="width:300px; height:250px;" >
+              <div class="card-body">
+                <h4 align="center" class="card-title">{{item.item_name}}</h4>
+                <p  align="center" style=" "class="card-text"><i>{{item.price}} Php</i></p>
+              </div>
+          </div>
+          <br/>
+          <br/>
+        </li>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+</div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+<script>
+function openForm() {
+    document.getElementById("myForm").style.display = "block";
+}
+
+function closeForm() {
+    document.getElementById("myForm").style.display = "none";
+}
+
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+    document.getElementById("main").style.marginLeft = "250px";
+    document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+}
+
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+    document.getElementById("main").style.marginLeft= "0";
+    document.body.style.backgroundColor = "white";
+}
+</script>
+     
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
