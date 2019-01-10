@@ -1,0 +1,47 @@
+NAA NANI TANAN GUIDE LANG NI KUNG UNSA ANG NA CHANGE
+
+In 'app.py'
+	app.route('/search')
+
+In 'navbarcus.html'
+	{% from '_formhelpers.html' import search_field %}
+
+	<!-- ========================== SEARCH ======================== -->
+    <form method="POST" class="form-inline my-2 my-lg-0" action="{{ url_for('search') }}">
+      {{ searchForm.csrf_token }}
+      <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
+      <div aria-label="Search" type="text" placeholder="Search" >
+        {{ search_field(searchForm.resto, placeholder="Search for Restaurants", class="form-control mr-sm-2") }}
+      </div>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <!-- ========================== SEARCH ======================== -->
+
+In 'narbar.html'
+	{% from '_formhelpers.html' import search_field %}
+
+	<!-- ========================== SEARCH ======================== -->
+    <form method="POST" class="form-inline my-2 my-lg-0" action="{{ url_for('search') }}">
+      {{ searchForm.csrf_token }}
+      <!-- <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search"> -->
+      <div aria-label="Search" type="text" placeholder="Search" >
+        {{ search_field(searchForm.resto, placeholder="Search for Restaurants", class="form-control mr-sm-2") }}
+      </div>
+      <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+    </form>
+    <!-- ========================== SEARCH ======================== -->
+
+In '_formhelpers.html'
+
+	{% macro search_field(search) %}
+	{{ search(**kwargs)|safe }}
+	{% endmacro %}
+
+Added 'SearchForm.py'
+
+Tanan routes nga gagamit ug searchForm dapat magbutang ug 
+	e.g.
+	@app.route("/register")
+	def register():
+  		searchForm = SearchForm()
+  		return render_template('register.html', searchForm=searchForm)
